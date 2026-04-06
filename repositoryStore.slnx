@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="repositoryStore.Application/repositoryStore.Application.csproj" />
   <Project Path="repositoryStore.Domain/repositoryStore.Domain.csproj" />
   <Project Path="repositoryStore/repositoryStore.csproj" />
 </Solution>
