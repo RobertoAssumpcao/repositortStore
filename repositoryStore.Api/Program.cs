@@ -7,7 +7,8 @@ using repositoryStore.Infrastructure.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 var cnnStr = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new Exception("Connection string not found");
-builder.Services.AddDbContext<AppDbContext>(x => x.UseNpgsql(cnnStr));
+builder.Services.AddDbContext<AppDbContext>(x =>
+    x.UseNpgsql(cnnStr, b => b.MigrationsAssembly("repositoryStore.Infrastructure")));
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
