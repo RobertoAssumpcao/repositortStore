@@ -2,7 +2,7 @@
 using repositoryStore.Domain.Abstractions;
 using repositoryStore.Domain.Repositories;
 
-namespace repositoryStore.Application.UseCases.GetById;
+namespace repositoryStore.Application.UseCases.Products.GetById;
 
 public sealed class Handler(IProductRepository repository) : IRequestHandler<Command, Result<Response>>
 {

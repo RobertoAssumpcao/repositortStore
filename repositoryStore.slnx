@@ -1,6 +1,6 @@
 <Solution>
+  <Project Path="repositoryStore.Api/repositoryStore.Api.csproj" />
   <Project Path="repositoryStore.Application/repositoryStore.Application.csproj" />
   <Project Path="repositoryStore.Domain/repositoryStore.Domain.csproj" />
   <Project Path="repositoryStore.Infrastructure/repositoryStore.Infrastructure.csproj" />
-  <Project Path="repositoryStore/repositoryStore.csproj" />
 </Solution>
