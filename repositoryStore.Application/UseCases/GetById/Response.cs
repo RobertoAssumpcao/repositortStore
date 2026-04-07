@@ -1,6 +1,3 @@
 ﻿namespace repositoryStore.Application.UseCases.GetById;
 
-public class Response
-{
-    
-}
+public sealed record Response(int Id, string Title);
