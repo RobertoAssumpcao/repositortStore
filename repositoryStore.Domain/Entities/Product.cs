@@ -2,7 +2,7 @@
 
 namespace repositoryStore.Domain.Entities;
 
-public class Product : Entity
+public class Product : Entity,  IAggregateRoot
 {
     public required string Title { get; set; }
     public required string Slug { get; set; }

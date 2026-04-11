@@ -8,7 +8,7 @@ public class ProductMap : IEntityTypeConfiguration<Product>
 {
     public void Configure(EntityTypeBuilder<Product> builder)
     {
-        builder.ToTable("products");
+        builder.ToTable("product");
 
         builder.HasKey(x => x.Id);
 
