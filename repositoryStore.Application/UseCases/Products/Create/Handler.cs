@@ -11,10 +11,10 @@ public class Handler(IProductRepository repository, IUnitOfWork unitOfWork) : IR
     {
         var product = new Product
         {
-            Id = 1,
             Title = request.Title,
             Slug = request.Slug,
-            CreatedAtUtc = DateTime.UtcNow
+            CreatedAtUtc = DateTime.UtcNow,
+            UpdatedAtUtc = DateTime.UtcNow
         };
         
         await repository.CreateAsync(product, cancellationToken);

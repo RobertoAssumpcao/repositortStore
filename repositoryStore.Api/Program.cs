@@ -17,9 +17,17 @@ var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
 
-app.MapGet("v1/products/{id}", async (ISender sender, int id, CancellationToken cancellationToken) =>
+app.MapGet("v1/products/{id:int}", async (ISender sender, int id, CancellationToken cancellationToken) =>
 {
     var command = new repositoryStore.Application.UseCases.Products.GetById.Command(id);
+    var result = await sender.Send(command, cancellationToken);
+    return result.IsSuccess
+        ? Results.Ok(result.Value)
+        : Results.BadRequest(result.Error);
+});
+
+app.MapPost("v1/products", async (ISender sender, repositoryStore.Application.UseCases.Products.Create.Command command, CancellationToken cancellationToken) =>
+{
     var result = await sender.Send(command, cancellationToken);
     return result.IsSuccess
         ? Results.Ok(result.Value)

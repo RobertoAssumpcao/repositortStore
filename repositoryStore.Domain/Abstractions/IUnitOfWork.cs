@@ -1,6 +1,6 @@
 ﻿namespace repositoryStore.Domain.Abstractions;
 
-public interface IUnityOfWork
+public interface IUnitOfWork
 {
     Task CommitAsync();
 }
